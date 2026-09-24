@@ -1,0 +1,11 @@
+{
+  "name": "dadashmode-v7",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs 3000",
+    "start": "node serve.mjs 3000",
+    "build": "node -e \"console.log('DADASHMODE V7 build ready')\""
+  }
+}

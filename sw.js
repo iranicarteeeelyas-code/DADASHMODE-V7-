@@ -1,0 +1,4 @@
+const C='dm7-v1';const A=['./','index.html','stage.html','remote.html','css/fonts.css','css/app.css','css/stage.css','css/remote.css','js/app.bundle.js','js/stage.bundle.js','js/remote.bundle.js','fonts/Vazirmatn.ttf','fonts/Lalezar.ttf','fonts/Estedad.ttf','fonts/Anton.ttf','fonts/JetBrainsMono.ttf','manifest.webmanifest'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(A)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.pathname.startsWith('/api')||u.pathname.startsWith('/ws')||e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const cp=r.clone();caches.open(C).then(c=>c.put(e.request,cp));return r}).catch(()=>caches.match(e.request)))});

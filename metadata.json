@@ -1,0 +1,9 @@
+{
+  "name": "DADASHMODE V7 · اتاق کنترل",
+  "description": "اتاق کنترل و خروجی صحنه مسابقه داداش‌مد نسخه ۷ - بانک زمان",
+  "prompt": "DADASHMODE V7 Time Bank stage and show controller",
+  "version": "1.0.0",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
